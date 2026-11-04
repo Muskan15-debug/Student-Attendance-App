@@ -4,9 +4,10 @@ app = Flask(__name__)
 
 
 def check_attendance(att):
-    if att <= 80:
-        print("Not allowed to sit in exam")
-    print("Allowed")
+    if att < 80:
+        return "Not allowed to sit in exam"
+    else:
+        return "Allowed"
 
 def attendance_report(att):
     if check_attendance(att):

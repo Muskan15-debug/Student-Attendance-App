@@ -1,0 +1,25 @@
+name : Attendance Summary script
+on :
+  push :
+    branch : 
+    - main
+  pull request :
+    branch : 
+    - main
+
+jobs : 
+  attendance-summary:
+    runs-on : ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run validation script
+        run: python validation.py 
+      
+      - name: Run automated tests
+        run: pytest -v

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+</head>
+
+<body>
+    <h2>Student Login</h2>
+
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if (username === "student" && password === "student123") {
+                message.textContent = "Login successful!";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Invalid username or password.";
+                message.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
