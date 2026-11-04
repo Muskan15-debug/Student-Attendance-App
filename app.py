@@ -8,6 +8,11 @@ def check_attendance(att):
         print("Not allowed to sit in exam")
     print("Allowed")
 
+def attendance_report(att):
+    if check_attendance(att):
+        return 80 - att
+    return att
+
 @app.route("/")
 def home():
     return "Student Attendance System"
